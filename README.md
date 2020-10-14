@@ -9,3 +9,5 @@ Current features:
 - Arrows with active state, depending on the position of the thumbnails slider
 - Only vertical mode on the left
 - For variable products: change first image to a selected variation
+
+To be used only with Wordpress. It loads wp versions of React and ReactDOM

@@ -1,5 +1,5 @@
 {
-  "name": "otto-components",
+  "name": "ss-wc-gallery",
   "version": "1.0.0",
   "description": "",
   "main": "webpack.config.js",
@@ -7,12 +7,15 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
     "develop": "webpack --env dev --watch --progress --profile --color",
-    "build": "webpack --env prod --progress --profile --color",
-    "upload": "rsync -avz --prune-empty-dirs --include=\"*/\" --include=\"*.php\" --include=\"/dist/*\" --exclude=\"*\" . supersai@supersait:/home/supersai/public_html/demos/evricom/wp-content/plugins/evricom-components/",
-    "deploy": "npm run build && npm run upload"
+    "build": "webpack --env prod --progress --profile --color"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "woocommerce",
+    "gallery",
+    "react",
+    "carousel"
+  ],
+  "author": "Supersait",
   "license": "ISC",
   "dependencies": {
     "@emotion/core": "^10.0.35",

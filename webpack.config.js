@@ -34,7 +34,6 @@ module.exports = (env) => {
     externals: {
       react: "React",
       "react-dom": "ReactDOM",
-      gsap: "gsap",
     },
     optimization: {
       splitChunks: {

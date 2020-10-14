@@ -14,12 +14,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-add_filter('wc_get_template', 'ss_wc_get_template', 1, 5);
-function ss_wc_get_template($template, $template_name, $args, $template_path, $default_path) {
+add_filter('wc_get_template', 'ss_wc_get_template', 1, 2);
+function ss_wc_get_template($template, $template_name) {
   if (is_product() && $template_name === 'single-product/product-image.php') {
-    error_log(print_r($template,true));
-    error_log(print_r($template_name,true));
-    error_log(print_r(trailingslashit( __DIR__.'/product-image.php' ),true));
     return __DIR__.'/product-image.php';
   }
   return $template;
