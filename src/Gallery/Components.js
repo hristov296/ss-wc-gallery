@@ -72,11 +72,42 @@ export const galStyles = css`
       margin-bottom: 12px;
     }
   }
+  &.mobile-slider {
+    flex-flow: column-reverse;
+    .gallery-mobile-thumbs {
+      display: flex;
+    }
+    .gallery-main-styled {
+      margin-bottom: 15px;
+    }
+    .mobile-gal-thumb {
+      position: relative;
+      &:before {
+        content: "";
+        display: flex;
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background-color: pink;
+        margin: 0 5px;
+      }
+      img {
+        display: none;
+      }
+      &.flex-active-li:before {
+        background-color: black;
+      }
+    }
+  }
 `;
 
 export const galleryMainWrap = (sizes) => css`
   width: ${sizes["width"]}px;
   height: ${sizes["height"]}px;
+  @media (max-width: 600px) {
+    width: calc(100vw - 30px);
+    height: calc((100vw - 30px) * ${sizes["height"] / sizes["width"]});
+  }
 `;
 
 export const galleryThumbs = (sizes) => css`
