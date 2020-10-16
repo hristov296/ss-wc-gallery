@@ -210,7 +210,8 @@ const Gallery = (props) => {
                       href={currAtts.url}
                       data-lbwps-width={currAtts.widthFull}
                       data-lbwps-height={currAtts.heightFull}
-                      data-lbwps-handler="1">
+                      // data-lbwps-handler="1"
+                    >
                       <img src={currAtts.src} width={currAtts.width} height={currAtts.height} />
                     </a>
                   </div>
