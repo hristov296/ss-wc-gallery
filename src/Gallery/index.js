@@ -126,7 +126,7 @@ const Gallery = (props) => {
       observer.disconnect();
     };
   }, [setActive, reset]);
-  console.log(currLength.current);
+
   return (
     <div
       className={classnames([
@@ -190,7 +190,13 @@ const Gallery = (props) => {
       ) : (
         <div className="gallery-mobile-thumbs">
           {[...Array(currLength.current)].map((el, i) => (
-            <div className={classnames(["mobile-gal-thumb", { active: i === currId }])} key={i}></div>
+            <div
+              className={classnames(["mobile-gal-thumb", { active: i === currId }])}
+              key={i}
+              onClick={() => {
+                setActive(i);
+                setCurrId(i);
+              }}></div>
           ))}
         </div>
       )}
