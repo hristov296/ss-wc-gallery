@@ -75,6 +75,8 @@ $data['woocommerce_single'] = array(
 	'height' => $img_size_height
 );
 
+$data['html_before_main_gallery'] = apply_filters('sswc_gallery_before_main_gallery', '');
+
 wp_localize_script('ss-wc-gallery', 'ss_wc_gallery', $data);
 
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );

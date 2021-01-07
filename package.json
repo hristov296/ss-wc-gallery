@@ -1,13 +1,16 @@
 {
   "name": "ss-wc-gallery",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "webpack.config.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "clean": "rm -rf dist",
     "develop": "webpack --env dev --watch --progress --profile --color",
-    "build": "webpack --env prod --progress --profile --color"
+    "build": "webpack --env prod --progress --profile --color",
+    "build:dev": "webpack --env dev --progress --profile --color",
+    "upload": "rsync -avz --prune-empty-dirs --include=\"*/\" --include=\"*.php\" --include=\"/dist/*\" --exclude=\"*\" . supersait:public_html/demos/bebetech/wp-content/plugins/ss-wc-gallery/",
+    "deploy": "npm run build && npm run upload"
   },
   "keywords": [
     "woocommerce",
@@ -18,31 +21,31 @@
   "author": "Supersait",
   "license": "ISC",
   "dependencies": {
-    "@emotion/core": "^10.0.35",
+    "@emotion/core": "^10.1.1",
     "classnames": "^2.2.6",
     "react-swipeable": "^5.5.1",
     "react-transition-group": "^4.4.1"
   },
   "devDependencies": {
-    "@babel/cli": "^7.11.6",
-    "@babel/core": "^7.11.6",
-    "@babel/plugin-proposal-class-properties": "^7.10.4",
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@babel/preset-env": "^7.11.5",
-    "@babel/preset-react": "^7.10.4",
-    "babel-loader": "^8.1.0",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/preset-react": "^7.12.10",
+    "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^9.0.0",
     "css-loader": "^4.3.0",
-    "eslint": "^7.11.0",
+    "eslint": "^7.17.0",
     "eslint-loader": "^4.0.2",
-    "eslint-plugin-react": "^7.21.4",
-    "eslint-plugin-react-hooks": "^4.1.0",
-    "file-loader": "^6.1.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
+    "eslint-plugin-react": "^7.22.0",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "file-loader": "^6.2.0",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
     "style-loader": "^2.0.0",
-    "webpack": "^5.0.0",
-    "webpack-cli": "^4.0.0"
+    "webpack": "^5.11.1",
+    "webpack-cli": "^4.3.1"
   },
   "babel": {
     "presets": [

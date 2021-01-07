@@ -188,20 +188,21 @@ const Gallery = (props) => {
           </div>
         </div>
       ) : (
-        <div className="gallery-mobile-thumbs">
-          {[...Array(currLength.current)].map((el, i) => (
-            <div
-              className={classnames(["mobile-gal-thumb", { active: i === currId }])}
-              key={i}
-              onClick={() => {
-                setActive(i);
-                setCurrId(i);
-              }}></div>
-          ))}
-        </div>
-      )}
+          <div className="gallery-mobile-thumbs">
+            {[...Array(currLength.current)].map((el, i) => (
+              <div
+                className={classnames(["mobile-gal-thumb", { active: i === currId }])}
+                key={i}
+                onClick={() => {
+                  setActive(i);
+                  setCurrId(i);
+                }}></div>
+            ))}
+          </div>
+        )}
       <div className="gallery-main-styled">
         <div className="gallery-main-wrap" css={galleryMainWrap(data["woocommerce_single"])}>
+          {data.html_before_main_gallery !== '' && <div dangerouslySetInnerHTML={{ __html: data.html_before_main_gallery }} />}
           <div className="gallery-main">
             <div className="gallery-main-cont" css={carouselContent} {...handlers} style={style}>
               {data["single_images"].map((el, i) => {
@@ -230,7 +231,7 @@ const Gallery = (props) => {
                       href={currAtts.url}
                       data-lbwps-width={currAtts.widthFull}
                       data-lbwps-height={currAtts.heightFull}
-                      // data-lbwps-handler="1"
+                    // data-lbwps-handler="1"
                     >
                       <img src={currAtts.src} width={currAtts.width} height={currAtts.height} />
                     </a>
